@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "pushswap.h"
+
 void	init_stack_a(t_stack_node *a, char **argv)
 {
-	long	value;
+	long	num;
 	int		index;
 
 	index = 0;
@@ -20,12 +22,12 @@ void	init_stack_a(t_stack_node *a, char **argv)
 	{
 		if (error_syntax(argv[i]))
 			free_errors(a);
-		value = ft_atol(argv[i])
-		if (value > INT_MAX || value < INT_MIN)
+		num = ft_atol(argv[i])
+		if (num > INT_MAX || num < INT_MIN)
 			free_errors(a);
-		if (errors_duplicate(a, (int)value))
+		if (errors_duplicate(a, (int)num))
 			free_errors(a);
-		append_node(a, (int)value);
+		append_node(a, (int)num);
 		index++;
 	}
 }

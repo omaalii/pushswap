@@ -15,7 +15,7 @@
 
 #	include <stdbool.h>
 #	include <limits.h>
-#	include "../libft/42git/libft.h"
+#	include "pushswap.h"
 
 typedef	struct s_stack_node
 {
