@@ -12,5 +12,8 @@ void    sort_stacks(t_stack_node **a, t_stack_node **b)
     while (len_a-- > 3 && !stack_sorted(*a))
     {
         init_nodes_a(*a, *b);
+        move_a_to_b(a, b);
     }
+    sort_three(a);
+
 }
