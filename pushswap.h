@@ -15,6 +15,7 @@
 
 #	include <stdbool.h>
 #	include <limits.h>
+#	include <unistd.h>
 #	include "pushswap.h"
 
 typedef	struct s_stack_node

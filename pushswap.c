@@ -30,7 +30,7 @@ int  main(int argc, char **argv)
 		else if (stack_len(a) == 3)
 			sort_three(&a);
 		else
-			turk_sort(&a, &b);
+			sort_stacks(&a, &b);
 	}
 	free_stack(&a);
 	return (0);

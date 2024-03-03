@@ -15,5 +15,11 @@ void    sort_stacks(t_stack_node **a, t_stack_node **b)
         move_a_to_b(a, b);
     }
     sort_three(a);
-
+    while (*b)
+    {
+        init_nodes_b(*a, *b);
+        move_b_to_a(a, b);
+    }
+    current_index(*a);
+    min_on_top(a);
 }
