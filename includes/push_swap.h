@@ -6,7 +6,7 @@
 /*   By: omaali <omaali@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 18:39:21 by omaali            #+#    #+#             */
-/*   Updated: 2024/03/08 11:23:50 by omaali           ###   ########.fr       */
+/*   Updated: 2024/03/08 16:44:44 by omaali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdbool.h>
 # include <limits.h>
 # include <unistd.h>
+# include <stdlib.h>
 # include "push_swap.h"
 
 typedef struct s_stack_node
@@ -37,12 +38,13 @@ int				error_syntax(char *str_nbr);
 int				errors_duplicate(t_stack_node *a, int num);
 //Stack initiation 
 void			init_stack_a(t_stack_node **a, char **argv);
-static long		ft_atol(const char *s);
-static void		append_node(t_stack_node *stack, int num);
+// long		ft_atol(const char *s);
+void		append_node(t_stack_node *stack, int num);
 //Nodes initiation
 void			init_nodes_a(t_stack_node *a, t_stack_node *b);
-void			init_nodes_b(t_stack_node **a, t_stack_node **b);
+void			init_nodes_b(t_stack_node *a, t_stack_node *b);
 //Stack utils
+int	ft_isdigit(char c);
 void			prep_for_push(t_stack_node **stack,
 					t_stack_node *top_node,
 					char stack_name);
@@ -64,6 +66,12 @@ void			sb(t_stack_node **b, bool print);
 void			ss(t_stack_node **a, t_stack_node **b, bool print);
 void			rotate(t_stack_node **stack);
 void			reverse_rotate(t_stack_node **stack);
+void	rotate_both(t_stack_node **a,
+					t_stack_node **b,
+					t_stack_node *cheapest_node);
+void	reverse_rotate_both(t_stack_node **a,
+							t_stack_node **b,
+							t_stack_node *cheapest_node);
 void			ra(t_stack_node **a, bool print);
 void			rb(t_stack_node **b, bool print);
 void			rra(t_stack_node **a, bool print);

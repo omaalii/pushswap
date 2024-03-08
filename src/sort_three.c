@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
-void	sort_three(t_stack_node **stack)
+void	sort_three(t_stack_node **a)
 {
 	t_stack_node	*biggest_node;
 
@@ -20,7 +20,7 @@ void	sort_three(t_stack_node **stack)
 	if (biggest_node == *a)
 		ra(a, false);
 	else if ((*a)->next == biggest_node)
-		rra(*a, false);
+		rra(a, false);
 	if ((*a)->nbr > (*a)->next->nbr)
 		sa(a, false);
 }

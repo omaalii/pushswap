@@ -6,11 +6,11 @@
 /*   By: omaali <omaali@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 08:04:16 by omaali            #+#    #+#             */
-/*   Updated: 2024/03/08 08:23:53 by omaali           ###   ########.fr       */
+/*   Updated: 2024/03/08 16:41:59 by omaali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	set_target_b(t_stack_node *a, t_stack_node *b)
 {
@@ -39,7 +39,7 @@ void	set_target_b(t_stack_node *a, t_stack_node *b)
 	}
 }
 
-void	init_nodes_b(t_stack_node **a, t_stack_node **b)
+void	init_nodes_b(t_stack_node *a, t_stack_node *b)
 {
 	current_index(a);
 	current_index(b);

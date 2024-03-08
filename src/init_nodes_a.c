@@ -6,11 +6,11 @@
 /*   By: omaali <omaali@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 08:03:42 by omaali            #+#    #+#             */
-/*   Updated: 2024/03/08 08:20:57 by omaali           ###   ########.fr       */
+/*   Updated: 2024/03/08 16:39:49 by omaali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	current_index(t_stack_node *stack)
 {
@@ -20,7 +20,7 @@ void	current_index(t_stack_node *stack)
 	i = 0;
 	if (!stack)
 		return ;
-	median = stack_len(stack) / 2;
+	median = ft_lstsize(stack) / 2;
 	while (stack)
 	{
 		stack->index = i;

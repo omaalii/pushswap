@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prep_for_push.c                                    :+:      :+:    :+:   */
+/*   pushswap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omaali <omaali@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/08 08:04:01 by omaali            #+#    #+#             */
-/*   Updated: 2024/03/08 08:04:03 by omaali           ###   ########.fr       */
+/*   Created: 2024/02/21 18:59:37 by omaali            #+#    #+#             */
+/*   Updated: 2024/03/08 10:50:29 by omaali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
-void	prep_for_push(t_stack_node **stack,
-					t_stack_node *top_node,
-					char stack_name)
+int	main(int argc, char **argv)
 {
-	while (*stack != top_node)
+	t_stack_node	*a;
+	t_stack_node	*b;
+
+	a = NULL;
+	b = NULL;
+	if (argc == 1 || (argc == 2 && !argv[1][0]))
+		return (-1);
+	else if (argc == 2)
+		init_stack_a(&a, argv + 1);
+	if (!stack_sorted(a))
 	{
-		if (stack_name == 'a')
-		{
-			if (top_node->above_median)
-				ra(stack, false);
-			else
-				rra(stack, false);
-		}
-		else if (stack_name == 'b')
-		{
-			if (top_node->above_median)
-				rb(stack, false);
-			else
-				rrb(stack, false);
-		}
+		if (ft_lstsize(a) == 2)
+			sa(&a, false);
+		else if (ft_lstsize(a) == 3)
+			sort_three(&a);
+		else
+			sort_stacks(&a, &b);
 	}
+	free_stack(&a);
+	return (0);
 }

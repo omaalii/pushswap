@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 bool	stack_sorted(t_stack_node *stack)
 {
@@ -28,7 +28,7 @@ bool	stack_sorted(t_stack_node *stack)
 t_stack_node	*find_min(t_stack_node *stack)
 {
 	long			min;
-	t_stack_node	*min_node;
+	t_stack_node	*min_node = NULL;
 
 	if (!stack)
 		return (NULL);
@@ -43,12 +43,13 @@ t_stack_node	*find_min(t_stack_node *stack)
 		stack = stack->next;
 		return (min_node);
 	}
+	return (NULL);
 }
 
 t_stack_node	*find_max(t_stack_node *stack)
 {
 	long			max;
-	t_stack_node	*max_node;
+	t_stack_node	*max_node = NULL;
 
 	if (!stack)
 		return (NULL);
@@ -63,6 +64,7 @@ t_stack_node	*find_max(t_stack_node *stack)
 		stack = stack->next;
 		return (max_node);
 	}
+	return (NULL);
 }
 
 t_stack_node	*get_cheapest(t_stack_node *stack)
@@ -78,4 +80,5 @@ t_stack_node	*get_cheapest(t_stack_node *stack)
 		}
 		stack = stack->next;
 	}
+	return (NULL);
 }

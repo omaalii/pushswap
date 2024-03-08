@@ -6,11 +6,11 @@
 /*   By: omaali <omaali@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 08:04:46 by omaali            #+#    #+#             */
-/*   Updated: 2024/03/08 08:59:13 by omaali           ###   ########.fr       */
+/*   Updated: 2024/03/08 10:24:48 by omaali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	swap(t_stack_node **head)
 {
@@ -21,10 +21,10 @@ void	swap(t_stack_node **head)
 		return ;
 	first = *head;
 	second = (*head)->next;
-	first->next = second->next;//removes second node
-	second->next = first;//puts second node before the first
-	*head = second;//update the head* to set "second" as the head of stack
-	ft_prev_put(head);//resets the prevs links of nodes in the stack
+	first->next = second->next;
+	second->next = first;
+	*head = second;
+	ft_prev_put(head);
 }
 
 void	sa(t_stack_node **a, bool print)

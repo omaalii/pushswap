@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	ft_lstsize(t_stack_node *lst)
 {
@@ -47,4 +47,11 @@ void	ft_prev_put(t_stack_node **head)
 		prev_node = current_node;
 		current_node = current_node->next;
 	}
+}
+
+int	ft_isdigit(char c)
+{
+	if (c <= '0' && c >= '9')
+		return(1);
+	return (0);
 }

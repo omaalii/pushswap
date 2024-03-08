@@ -6,36 +6,36 @@
 /*   By: omaali <omaali@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:02:31 by omaali            #+#    #+#             */
-/*   Updated: 2024/03/08 11:24:04 by omaali           ###   ########.fr       */
+/*   Updated: 2024/03/08 11:07:34 by omaali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	append_node(t_stack_node *stack, int num)
 {
 	t_stack_node	*node;
-	t_stack_node	*last_node; //to keep track of what we already put
+	t_stack_node	*last_node;
 
 	if (!stack)
 		return ;
 	node = malloc(sizeof(t_stack_node));
 	if (!node)
 	{
-		free_errors(stack);
+		free_errors(&stack);
 		return ;
 	}
 	node->next = NULL;
-	node->nbr = num;// filling the data box of the node with the number
-	if (!(*stack)) //if it is the first node being put
+	node->nbr = num;
+	if (!(stack))
 	{
 		stack = node;
 		node->prev = NULL;
 	}
-	else//if there is already nodes
+	else
 	{
 		last_node = find_last(stack);
-		last_node->next = node;//we want to put it after the last one present
+		last_node->next = node;
 		node->prev = last_node;
 	}
 }
@@ -74,9 +74,9 @@ void	init_stack_a(t_stack_node **a, char **argv)
 		num = ft_atol(argv[index]);
 		if (num > INT_MAX || num < INT_MIN)
 			free_errors(a);
-		if (errors_duplicate(a, (int)num))
+		if (errors_duplicate(*a, (int)num))
 			free_errors(a);
-		append_node(a, (int)num);
+		append_node(*a, (int)num);
 		index++;
 	}
 }

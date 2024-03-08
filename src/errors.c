@@ -6,11 +6,13 @@
 /*   By: omaali <omaali@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 08:03:08 by omaali            #+#    #+#             */
-/*   Updated: 2024/03/08 08:14:20 by omaali           ###   ########.fr       */
+/*   Updated: 2024/03/08 16:37:45 by omaali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 void	free_stack(t_stack_node **stack)
 {
@@ -23,7 +25,7 @@ void	free_stack(t_stack_node **stack)
 	while (current)
 	{
 		tmp = current->next;
-		free(current)
+		free(current);
 		current = tmp;
 	}
 	*stack = NULL;

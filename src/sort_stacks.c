@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 {
@@ -35,7 +35,7 @@ void	move_b_to_a(t_stack_node **a, t_stack_node **b)
 
 void	min_on_top(t_stack_node **a)
 {
-	while (*(a)->nbr != find_min(*a)->nbr)
+	while ((*a)->nbr != find_min(*a)->nbr)
 	{
 		if (find_min(*a)->above_median)
 			ra(a, false);
@@ -48,11 +48,11 @@ void	sort_stacks(t_stack_node **a, t_stack_node **b)
 {
 	int	len_a;
 
-	len_a = stack_len(*a);
+	len_a = ft_lstsize(*a);
 	if (len_a-- > 3 && !stack_sorted(*a))
-		pb (*b, *a, false);
+		pb (b, a, false);
 	if (len_a-- > 3 && !stack_sorted(*a))
-		pb (*b, *a, false);
+		pb (b, a, false);
 	while (len_a-- > 3 && !stack_sorted(*a))
 	{
 		init_nodes_a(*a, *b);
