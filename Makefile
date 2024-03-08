@@ -6,7 +6,7 @@
 #    By: omaali <omaali@student.42barcelon>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/08 08:02:28 by omaali            #+#    #+#              #
-#    Updated: 2024/03/08 08:02:33 by omaali           ###   ########.fr        #
+#    Updated: 2024/03/08 10:30:22 by omaali           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,10 @@ CC = gcc
 
 %.o:%.c		Makefile includes/push_swap.h
 					${CC} ${FLAGS} -I ./ -c $< -o $@
+
+$(NAME):	${OBJECTS}
+			${CC} ${FLAGS} -o ${NAME} ${OBJECTS}
+
 all: $(NAME)
 
 clean:
