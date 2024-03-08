@@ -6,7 +6,7 @@
 /*   By: omaali <omaali@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:02:31 by omaali            #+#    #+#             */
-/*   Updated: 2024/02/21 19:23:09 by omaali           ###   ########.fr       */
+/*   Updated: 2024/03/08 08:29:29 by omaali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	append_node(t_stack_node *stack, int num)
 {
 	t_stack_node	*node;
-	t_stack_node	*last_node;//to keep track of what we already put
-	
+	t_stack_node	*last_node; //to keep track of what we already put
+
 	if (!stack)
 		return ;
 	node = malloc(sizeof(t_stack_node));
@@ -27,7 +27,7 @@ void	append_node(t_stack_node *stack, int num)
 	}
 	node->next = NULL;
 	node->nbr = num;// filling the data box of the node with the number
-	if (!(*stack))//if it is the first node being put
+	if (!(*stack)) //if it is the first node being put
 	{
 		stack = node;
 		node->prev = NULL;
@@ -40,25 +40,25 @@ void	append_node(t_stack_node *stack, int num)
 	}
 }
 
-static long ft_atol(const char *s)
+static long	ft_atol(const char *s)
 {
-    long    result;
-    int     sign;
+	long	result;
+	int		sign;
 
-    result = 0;
-    sign = 1;
-    while (*s == ' ' || *s == '\t' || *s == '\n' || \
-            *s == '\r' || *s == '\f' || *s == '\v')
-        s++;
-    if (*s == '-' || *s == '+')
-    {
-        if (*s == '-')
-            sign = -1;
-        s++;
-    }
-    while (ft_isdigit(*s))
-        result = result * 10 + (*s++ - '0');
-    return (result * sign);
+	result = 0;
+	sign = 1;
+	while (*s == ' ' || *s == '\t' || *s == '\n' || \
+		*s == '\r' || *s == '\f' || *s == '\v')
+		s++;
+	if (*s == '-' || *s == '+')
+	{
+		if (*s == '-')
+			sign = -1;
+		s++;
+	}
+	while (ft_isdigit(*s))
+		result = result * 10 + (*s++ - '0');
+	return (result * sign);
 }
 
 void	init_stack_a(t_stack_node *a, char **argv)
