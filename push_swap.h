@@ -6,7 +6,7 @@
 /*   By: omaali <omaali@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 18:39:21 by omaali            #+#    #+#             */
-/*   Updated: 2024/03/08 08:47:15 by omaali           ###   ########.fr       */
+/*   Updated: 2024/03/08 11:23:50 by omaali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void			free_errors(t_stack_node **a);
 int				error_syntax(char *str_nbr);
 int				errors_duplicate(t_stack_node *a, int num);
 //Stack initiation 
-void			init_stack_a(t_stack_node *a, char **argv);
+void			init_stack_a(t_stack_node **a, char **argv);
 static long		ft_atol(const char *s);
 static void		append_node(t_stack_node *stack, int num);
 //Nodes initiation

@@ -6,7 +6,7 @@
 /*   By: omaali <omaali@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:02:31 by omaali            #+#    #+#             */
-/*   Updated: 2024/03/08 08:29:29 by omaali           ###   ########.fr       */
+/*   Updated: 2024/03/08 11:24:04 by omaali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static long	ft_atol(const char *s)
 	return (result * sign);
 }
 
-void	init_stack_a(t_stack_node *a, char **argv)
+void	init_stack_a(t_stack_node **a, char **argv)
 {
 	long	num;
 	int		index;
