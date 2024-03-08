@@ -1,6 +1,6 @@
 #include "pushswap.h"
 
-void sort_three(t_stack_node **stack)
+void    sort_three(t_stack_node **stack)
 {
     t_Stack_node *biggest_node;
 

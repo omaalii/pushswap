@@ -33,7 +33,7 @@ void    pa(t_stack_node **a, t_stack_node **b, bool print)
 
 void    pb(t_stack_node **b, t_stack_node **a, bool print)
 {
-    push(b, a)
+    push(b, a);
     if (!print)
         write(1, "pb\n", 3);
 }

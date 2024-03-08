@@ -69,26 +69,3 @@ t_stack_node    *get_cheapest(t_stack_node *stack)
     }
 
 }
-
-static long ft_atol(const char *s)
-{
-    long    result;
-    int     sign;
-
-    result = 0;
-    sing = 1;
-    while (*s == ' ' || *s == '\t' || *s == '\n' || \
-            *s == '\r' || *s == '\f' || *s == '\v')
-        s++;
-    if (*s == '-' || *s == '+')
-    {
-        if (*s == '-')
-            sign = -1;
-        s++;
-    }
-    while (ft_isdigit(*s))
-        result = result * 10 + (*s++ - '0');
-    return (result * sign);
-}
-
-

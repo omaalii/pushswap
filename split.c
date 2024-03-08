@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	count_words(char *str, char seperator)
+/*static int	count_words(char *str, char seperator)
 {
 	int		count;
 	bool	inside_word;
@@ -57,4 +57,4 @@ char	**ft_split(char *str, char seperator)
 		}
 		vector_strings[i++] = get_next_word(Str, seperator);
 	}
-}
+}*/
