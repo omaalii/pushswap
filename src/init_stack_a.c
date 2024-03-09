@@ -57,7 +57,7 @@ static long	ft_atol(const char *s)
 		s++;
 	}
 	while (ft_isdigit(*s))
-		result = result * 10 + (*s++ - '0');
+		result = result * 10 + (*(s++) - '0');
 	return (result * sign);
 }
 

@@ -51,7 +51,7 @@ void	ft_prev_put(t_stack_node **head)
 
 int	ft_isdigit(char c)
 {
-	if (c <= '0' && c >= '9')
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
