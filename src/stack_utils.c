@@ -28,8 +28,9 @@ bool	stack_sorted(t_stack_node *stack)
 t_stack_node	*find_min(t_stack_node *stack)
 {
 	long			min;
-	t_stack_node	*min_node = NULL;
+	t_stack_node	*min_node;
 
+	min_node = NULL;
 	if (!stack)
 		return (NULL);
 	min = LONG_MAX;
@@ -49,8 +50,9 @@ t_stack_node	*find_min(t_stack_node *stack)
 t_stack_node	*find_max(t_stack_node *stack)
 {
 	long			max;
-	t_stack_node	*max_node = NULL;
+	t_stack_node	*max_node;
 
+	max_node = NULL;
 	if (!stack)
 		return (NULL);
 	max = LONG_MIN;

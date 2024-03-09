@@ -35,6 +35,8 @@ void	move_b_to_a(t_stack_node **a, t_stack_node **b)
 
 void	min_on_top(t_stack_node **a)
 {
+	if (*a == NULL)
+		return ;
 	while ((*a)->nbr != find_min(*a)->nbr)
 	{
 		if (find_min(*a)->above_median)
@@ -46,6 +48,8 @@ void	min_on_top(t_stack_node **a)
 
 void	sort_stacks(t_stack_node **a, t_stack_node **b)
 {
+	if (*a == NULL || *b == NULL)
+		return;
 	int	len_a;
 
 	len_a = ft_lstsize(*a);

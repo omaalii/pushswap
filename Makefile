@@ -24,6 +24,8 @@ SRC = 	src/errors.c	\
 			src/push_swap.c	\
 			src/push.c	\
 			src/rotate.c	\
+			src/rotate_both.c \
+			src/rotate_moves.c \
 			src/sort_stacks.c	\
 			src/sort_three.c	\
 			src/stack_utils.c	\

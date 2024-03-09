@@ -39,12 +39,12 @@ int				errors_duplicate(t_stack_node *a, int num);
 //Stack initiation 
 void			init_stack_a(t_stack_node **a, char **argv);
 // long		ft_atol(const char *s);
-void		append_node(t_stack_node *stack, int num);
+void			append_node(t_stack_node *stack, int num);
 //Nodes initiation
 void			init_nodes_a(t_stack_node *a, t_stack_node *b);
 void			init_nodes_b(t_stack_node *a, t_stack_node *b);
 //Stack utils
-int	ft_isdigit(char c);
+int				ft_isdigit(char c);
 void			prep_for_push(t_stack_node **stack,
 					t_stack_node *top_node,
 					char stack_name);
@@ -66,12 +66,12 @@ void			sb(t_stack_node **b, bool print);
 void			ss(t_stack_node **a, t_stack_node **b, bool print);
 void			rotate(t_stack_node **stack);
 void			reverse_rotate(t_stack_node **stack);
-void	rotate_both(t_stack_node **a,
+void			rotate_both(t_stack_node **a,
 					t_stack_node **b,
 					t_stack_node *cheapest_node);
-void	reverse_rotate_both(t_stack_node **a,
-							t_stack_node **b,
-							t_stack_node *cheapest_node);
+void			reverse_rotate_both(t_stack_node **a,
+					t_stack_node **b,
+					t_stack_node *cheapest_node);
 void			ra(t_stack_node **a, bool print);
 void			rb(t_stack_node **b, bool print);
 void			rra(t_stack_node **a, bool print);

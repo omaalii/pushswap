@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   rotate_moves.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omaali <omaali@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/08 08:04:33 by omaali            #+#    #+#             */
-/*   Updated: 2024/03/08 08:04:36 by omaali           ###   ########.fr       */
+/*   Created: 2024/03/09 13:21:46 by omaali            #+#    #+#             */
+/*   Updated: 2024/03/09 13:21:49 by omaali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sort_three(t_stack_node **a)
+void	ra(t_stack_node **a, bool print)
 {
-	t_stack_node	*biggest_node;
+	rotate(a);
+	if (!print)
+		write(1, "ra\n", 3);
+}
 
-	if (*a == NULL)
-		return ;
-	biggest_node = find_max(*a);
-	if (biggest_node == *a)
-		ra(a, false);
-	else if ((*a)->next == biggest_node)
-		rra(a, false);
-	if ((*a)->nbr > (*a)->next->nbr)
-		sa(a, false);
+void	rb(t_stack_node **b, bool print)
+{
+	rotate(b);
+	if (!print)
+		write(1, "rb\n", 3);
+}
+
+void	rra(t_stack_node **a, bool print)
+{
+	reverse_rotate(a);
+	if (!print)
+		write(1, "rra\n", 4);
+}
+
+void	rrb(t_stack_node **b, bool print)
+{
+	reverse_rotate(b);
+	if (!print)
+		write(1, "rrb\n", 4);
 }
