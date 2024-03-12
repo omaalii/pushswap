@@ -23,7 +23,7 @@ void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 		&& !(cheapest_node->target_node->above_median))
 		reverse_rotate_both(a, b, cheapest_node);
 	prep_for_push(a, cheapest_node, 'a');
-	prep_for_push(b, cheapest_node, 'b');
+	prep_for_push(b, cheapest_node->target_node, 'b');
 	pb(b, a, false);
 }
 
@@ -48,8 +48,6 @@ void	min_on_top(t_stack_node **a)
 
 void	sort_stacks(t_stack_node **a, t_stack_node **b)
 {
-	if (*a == NULL || *b == NULL)
-		return;
 	int	len_a;
 
 	len_a = ft_lstsize(*a);

@@ -11,8 +11,9 @@
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include <stdio.h>
 
-void	append_node(t_stack_node *stack, int num)
+void	append_node(t_stack_node **stack, int num)
 {
 	t_stack_node	*node;
 	t_stack_node	*last_node;
@@ -22,19 +23,19 @@ void	append_node(t_stack_node *stack, int num)
 	node = malloc(sizeof(t_stack_node));
 	if (!node)
 	{
-		free_errors(&stack);
+		free_errors(stack);
 		return ;
 	}
 	node->next = NULL;
 	node->nbr = num;
-	if (!(stack))
+	if (!(*stack))
 	{
-		stack = node;
+		*stack = node;
 		node->prev = NULL;
 	}
 	else
 	{
-		last_node = find_last(stack);
+		last_node = find_last(*stack);
 		last_node->next = node;
 		node->prev = last_node;
 	}
@@ -76,7 +77,7 @@ void	init_stack_a(t_stack_node **a, char **argv)
 			free_errors(a);
 		if (errors_duplicate(*a, (int)num))
 			free_errors(a);
-		append_node(*a, (int)num);
+		append_node(a, (int)num);
 		index++;
 	}
 }

@@ -12,21 +12,18 @@
 
 #include "../includes/push_swap.h"
 
-static void	printstack(t_stack_node **st)
+void	printstack(t_stack_node *st)
 {
-	t_stack_node *tmp;
-	int i;
+	t_stack_node	*tmp;
+	int				i;
 
-	if (*st)
-		return ;
 	i = 0;
-	tmp = *st;
-	while (tmp)
+	tmp = st;
+	while (st)
 	{
-		printf("HERE\n");	
-		printf("num -----[%i] --- %d\n", i, tmp->nbr);
+		printf("num -----[%i] --- %d\n", i, st->nbr);
 		i++;
-		tmp = tmp->next;
+		st = st->next;
 	}
 }
 
@@ -40,7 +37,7 @@ int	main(int argc, char **argv)
 	if (argc <= 1)
 		return (-1);
 	init_stack_a(&a, argv + 1);
-	printstack(&a);
+	printstack(a);
 	if (!stack_sorted(a))
 	{
 		if (ft_lstsize(a) == 2)
@@ -50,6 +47,7 @@ int	main(int argc, char **argv)
 		else
 			sort_stacks(&a, &b);
 	}
+	printstack(a);
 	free_stack(&a);
 	return (0);
 }

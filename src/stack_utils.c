@@ -42,9 +42,8 @@ t_stack_node	*find_min(t_stack_node *stack)
 			min_node = stack;
 		}
 		stack = stack->next;
-		return (min_node);
 	}
-	return (NULL);
+	return (min_node);
 }
 
 t_stack_node	*find_max(t_stack_node *stack)
@@ -64,9 +63,8 @@ t_stack_node	*find_max(t_stack_node *stack)
 			max_node = stack;
 		}
 		stack = stack->next;
-		return (max_node);
 	}
-	return (NULL);
+	return (max_node);
 }
 
 t_stack_node	*get_cheapest(t_stack_node *stack)

@@ -39,8 +39,9 @@ int				error_syntax(char *str_nbr);
 int				errors_duplicate(t_stack_node *a, int num);
 //Stack initiation 
 void			init_stack_a(t_stack_node **a, char **argv);
+void			printstack(t_stack_node *st);
 // long		ft_atol(const char *s);
-void			append_node(t_stack_node *stack, int num);
+void			append_node(t_stack_node **stack, int num);
 //Nodes initiation
 void			init_nodes_a(t_stack_node *a, t_stack_node *b);
 void			init_nodes_b(t_stack_node *a, t_stack_node *b);

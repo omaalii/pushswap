@@ -30,7 +30,7 @@ t_stack_node	*find_last(t_stack_node *lst)
 	if (!lst)
 		return (NULL);
 	while (lst->next)
-		lst = lst->next;
+		lst = (lst)->next;
 	return (lst);
 }
 
