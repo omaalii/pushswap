@@ -5,50 +5,39 @@
 #                                                     +:+ +:+         +:+      #
 #    By: omaali <omaali@student.42barcelon>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/08 08:02:28 by omaali            #+#    #+#              #
-#    Updated: 2024/03/13 02:08:23 by omaali           ###   ########.fr        #
+#    Created: 2024/03/13 02:05:40 by omaali            #+#    #+#              #
+#    Updated: 2024/03/13 02:13:12 by omaali           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
+NAME_CHECKER = checker
 
 FLAGS = -Wall -Wextra -Werror -g
+# -fsanitize=address
 
-SRC = 	src/errors.c	\
-			src/init_nodes_a.c	\
-			src/init_nodes_b.c	\
-			src/lst_utils.c	\
-			src/prep_for_push.c	\
-			src/init_stack_a.c	\
-			src/push_swap.c	\
-			src/push.c	\
-			src/rotate.c	\
-			src/rotate_both.c \
-			src/rotate_moves.c \
-			src/sort_stacks.c	\
-			src/sort_three.c	\
-			src/stack_utils.c	\
-			src/swap.c	
+SRCBONUS = checker/checker.c	\
+		   checeker/get_next_line.c	\
+		   checker/get_next_line_utils.c
 
-
-OBJECTS = $(SRC:.c=.o)
+OBJECTSBONUS = $(SRCBONUS:.c=.o)
 
 CC = gcc
 
-%.o : %.c		Makefile includes/push_swap.h
-					${CC} ${FLAGS} -I ./ -c $< -o $@
+%.o : %.c		Makefile checker.h
+				${CC} ${FLAGS} -I -c $< -o $@
 
-$(NAME):	${OBJECTS}
-			${CC} ${FLAGS} -o ${NAME} ${OBJECTS}
+$(NAME_CHECKER):	${OBJECTSBONUS}
+					${CC} ${FLAGS} -o ${NAME_CHECKER} ${OBJECTSBONUS}
 
-all: $(NAME)
+bonus: $(NAME_CHECKER)
 
 clean:
-		rm -rf $(OBJECTS)
+	rm -rf $(OBJECTSBONUS)
 
 fclean: clean
-		rm -rf $(NAME)
+	rm -rf $(NAME_CHECKER)
 
-re:		fclean all
+re:		fclean bonus
 
-.PHONY:	all clean fclean re
+.PHONY:	clean fclean re bonus
+
