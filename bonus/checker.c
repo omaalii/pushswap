@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "checker.h"
-# include "../includes/push_swap.h"
+#include "../includes/push_swap.h"
 #include <stdbool.h>
 
 static int	ft_strcmp(char *str_1, char *str_2)
@@ -23,6 +23,7 @@ static int	ft_strcmp(char *str_1, char *str_2)
 	}
 	return (*str_1 - *str_2);
 }
+
 static void	error(t_stack_node **a, t_stack_node **b)
 {
 	free_stack(a);
@@ -59,13 +60,12 @@ static void	parcing_command(t_stack_node **a, t_stack_node **b, char *command)
 		error(a, b);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stack_node	*a;
 	t_stack_node	*b;
 	char			*next_line;
 	int				len;
-
 
 	a = NULL;
 	b = NULL;

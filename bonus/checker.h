@@ -13,7 +13,7 @@
 #ifndef CHECKER_H
 # define CHECKER_H
 
-# define BUFFER_SIZE 19
+# define BUFFER_SIZE 42
 # include <fcntl.h>
 # include "../includes/push_swap.h"
 
