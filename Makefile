@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME = push_swap
-LIBA = push_swap.a
+LIBA = .push_swap.a
 NAME_CHECKER = checker
 
 FLAGS = -Wall -Wextra -Werror -g
@@ -57,7 +57,7 @@ $(NAME_CHECKER): $(OBJECTS_BONUS) $(LIBA)
 		$(CC) $(FLAGS) $(OBJECTS_BONUS) -o $(NAME_CHECKER) $(LIBA)
 
 clean:
-		rm -rf $(OBJECTS) $(OBJECTS_BONUS)
+		rm -rf $(OBJECTS) $(OBJECTS_BONUS) $(LIBA)
 
 fclean: clean
 		rm -rf $(NAME) $(LIBA) $(NAME_CHECKER)
