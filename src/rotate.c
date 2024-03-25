@@ -38,7 +38,7 @@ void	reverse_rotate(t_stack_node **stack)
 	t_stack_node	*head;
 	t_stack_node	*temp;
 
-	if (*stack == NULL)
+	if (*stack == NULL || !(*stack)->next)
 		return ;
 	current = *stack;
 	head = *stack;
