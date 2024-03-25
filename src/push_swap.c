@@ -37,6 +37,7 @@ int	main(int argc, char **argv)
 	if (argc <= 1)
 		return (-1);
 	init_stack_a(&a, argv + 1);
+	printstack(a);
 	if (!stack_sorted(a))
 	{
 		if (ft_lstsize(a) == 2)
@@ -46,6 +47,7 @@ int	main(int argc, char **argv)
 		else
 			sort_stacks(&a, &b);
 	}
+	printstack(a);
 	free_stack(&a);
 	return (0);
 }
